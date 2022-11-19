@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = {
-  tileLayer: 'http://{s}.tile.osm.org/{z}/{x}/{y}.png',
+  tileLayer: 'https://{s}.tile.osm.org/{z}/{x}/{y}.png',
   host: 'https://vroom.ruterute.com',
   port: '443',
   maxTaskNumber: 100,
