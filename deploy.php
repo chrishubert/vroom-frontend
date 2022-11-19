@@ -12,11 +12,30 @@ set('writable_mode', 'sticky');
 set('writable_recursive', true);
 set('http_user', 'www-data');
 set('http_group', 'www-data');
-// set('writable_use_sudo', true);
+
 task('deploy', [
     'deploy:prepare',
     'deploy:publish',
 ]);
+
+task('provision', [
+    'provision:check',
+    'provision:configure',
+    // 'provision:update',
+    // 'provision:upgrade',
+    // 'provision:install',
+    'provision:ssh',
+    'provision:firewall',
+    'provision:deployer',
+    'provision:server',
+    //'provision:php',
+    //'provision:databases',
+    // 'provision:composer',
+    'provision:npm',
+    'provision:website',
+    'provision:verify',
+]);
+
 // Hosts
 host('194.163.167.9')
     ->set('remote_user', 'deployer')
